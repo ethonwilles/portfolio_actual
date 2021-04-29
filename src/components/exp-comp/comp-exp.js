@@ -11,7 +11,7 @@ const CompExp = () => {
       </div>
 
       <div className="work-desc">
-        <p>November 2019 - Present</p>
+        <p>November 2019 - July 2020</p>
         <h1>Python Developer</h1>
       </div>
     </div>
