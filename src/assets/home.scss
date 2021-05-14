@@ -1,52 +1,70 @@
 .home {
-  height: 100vh;
-  background-image: url("./images/background.jpg");
-
   display: flex;
   flex-direction: column;
-  align-items: center;
-  .content {
-    display: flex;
-    flex: auto;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-    p {
-      color: white;
-      font-size: 82px;
-    }
+  height: 100vh;
+   .head{
+     display: flex;
+     flex-direction: column;
+     flex: inherit;
+     margin: 20px 0 0 20px;
+     h1,h3{
+       margin: 0;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     }
 
-    .content-link {
-      width: 50vw;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .content-p {
-      padding-left: 40px;
-      p {
-        display: flex;
-        flex-direction: column;
-        font-family: "Roboto", sans-serif;
-        font-weight: 500;
-      }
-    }
-    .content-link {
-      button {
-        height: 67px;
-        width: 250px;
-        background-color: #0b84ec;
-        border: none;
-        font-size: 21px;
-        font-family: Arial, sans-serif;
-        font-weight: 600;
-        color: white;
-        cursor: pointer;
-        &:active {
-          background-color: white;
-          color: #0b84ec;
-        }
-      }
-    }
-  }
+     h3{
+       font-size: 20px;
+       font-style: italic;
+       color: #707070;
+     }
+     h1{
+       font-size: 40px;
+       font-weight: 600;
+     }
+   }
+
+
+
+
+   .trunk{
+     display: flex;
+     flex: auto;
+     justify-content: space-between;
+     margin: 0 150px;
+     align-items: center;
+
+
+
+     .trunk-comp{
+       display: flex;
+       flex-direction: column;
+       
+       justify-content: space-around;
+       height: 100%;
+
+
+       img{
+         height: 120px;
+         width: 100px;
+       }
+
+
+       
+     }
+     .one, .two{
+       width: 200px;
+     }
+
+     .trunk-comp-middle{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+      border: 5px $site-gray dashed;
+      margin: 15px;
+       img{
+         height: 230px;
+         width: inherit;
+       }
+     }
+   }
 }
