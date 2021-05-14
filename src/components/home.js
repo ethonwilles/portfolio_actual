@@ -15,7 +15,7 @@ import HomepageLinkItem from "./sub-comps/homepageLinkItem";
 const Home = () => {
   
   return (
-    <div className="home">
+    <div className="home" style={{height: "100vh"}}>
       <div className="head">
         <h1>Ethon Willes</h1>
         <h3>Full Stack Web Developer</h3>
@@ -26,22 +26,23 @@ const Home = () => {
         
         
         <div className="trunk-comp one">
-        <HomepageLinkItem name="Experience" imgSrc={exp}/>
+        <HomepageLinkItem name="Experience" imgSrc={exp} optionalClassName={"item-wrapper"}/>
         
 
-        <HomepageLinkItem name="Education" imgSrc={edu}/>
+        <HomepageLinkItem name="Education" imgSrc={edu} optionalClassName={"item-wrapper education"}/>
         </div>
         
       
         
       <div className="trunk-comp-middle two">
       <img src={dragNDrop} alt="dropzone"  />
+      <p>Drag and Drop Icons to Begin</p>
       </div>
 
 
       <div className="trunk-comp three">
-      <HomepageLinkItem name="About" imgSrc={abt}/>
-      <HomepageLinkItem name="Contact" imgSrc={cntct}/>
+      <HomepageLinkItem name="About" imgSrc={abt} optionalClassName={"item-wrapper about"}/>
+      <HomepageLinkItem name="Contact" imgSrc={cntct} optionalClassName={"item-wrapper "}/>
       </div>
   
         

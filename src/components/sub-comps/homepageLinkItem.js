@@ -13,9 +13,11 @@ const HomepageLinkItem = (props) =>{
             return false
         }
     }
-return <div className="item-wrapper" >
+return <div className={props.optionalClassName}>
+    <div className='item-wrapper-container'>
 <img src={props.imgSrc} alt={props.name}/>
 <p>{props.name}</p>
+</div>
 </div>
 }
 export default HomepageLinkItem;

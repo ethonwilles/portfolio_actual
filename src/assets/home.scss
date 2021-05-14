@@ -1,7 +1,7 @@
 .home {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 103vh;
    .head{
      display: flex;
      flex-direction: column;
@@ -44,26 +44,52 @@
 
 
        img{
-         height: 120px;
-         width: 100px;
+         height: 100px;
+         width: 80px;
        }
 
+        .education, .about{
+          align-self: flex-end;
+        }
 
-       
+
+
+      .item-wrapper{
+        display: flex;
+        flex-direction: column;
+        .item-wrapper-container{
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        p{
+          font-size: 22px;
+          font-style: italic;
+          vertical-align: middle;
+          display: flex;
+          justify-content: center;
+          margin: 0px;
+        }
+      }
      }
-     .one, .two{
+     .one, .three{
        width: 200px;
      }
 
      .trunk-comp-middle{
        display: flex;
+       flex-direction: column;
        align-items: center;
        justify-content: center;
-      border: 5px $site-gray dashed;
+      
+      font-style: italic;
       margin: 15px;
        img{
-         height: 230px;
+         height: 180px;
          width: inherit;
+         border: 5px $site-gray dashed;
+         padding: 15px;
        }
      }
    }

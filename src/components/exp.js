@@ -1,43 +1,13 @@
 import React from "react";
-import NavBar from "./navbar";
 
 import CompExp from "./exp-comp/comp-exp";
 import Projects from "./exp-comp/projects";
+import BackBar from "./backBar";
 const Exp = () => {
   const [check, setCheck] = React.useState(true);
   return (
-    <div
-      className="exp main"
-      style={check ? { height: "100vh" } : { height: "auto" }}
-    >
-      <NavBar />
-      <div className="exp-content">
-        <div className="button-div">
-          <button
-            onClick={() => {
-              setCheck(true);
-            }}
-            style={
-              check ? { backgroundColor: "white" } : null
-            }
-          >
-            Experience
-          </button>
-          <button
-            onClick={() => {
-              setCheck(false);
-            }}
-            style={
-              check === false
-                ? { backgroundColor: "white" }
-                : null
-            }
-          >
-            Projects
-          </button>
-        </div>
-        {check ? <CompExp /> : <Projects />}
-      </div>
+    <div className="exp">
+      <BackBar />
     </div>
   );
 };
