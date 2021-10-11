@@ -48,7 +48,7 @@
          width: 80px;
        }
 
-        .education, .about{
+        .Education, .About{
           align-self: flex-end;
         }
 
@@ -57,6 +57,8 @@
       .item-wrapper{
         display: flex;
         flex-direction: column;
+
+        
         .item-wrapper-container{
           width: 50%;
           display: flex;
@@ -75,8 +77,11 @@
      }
      .one, .three{
        width: 200px;
+       &:hover, &:active{
+         cursor: pointer;
+       }
      }
-
+     
      .trunk-comp-middle{
        display: flex;
        flex-direction: column;
@@ -89,7 +94,22 @@
          height: 180px;
          width: inherit;
          border: 5px $site-gray dashed;
+        
          padding: 15px;
+       }
+       img.over{
+        height: 180px;
+        width: inherit;
+        border: 5px green dashed;
+        color: green;
+        padding: 15px;
+        &:hover{
+          cursor: copy;
+        }
+       }
+
+       p.over{
+         color: green;
        }
      }
    }

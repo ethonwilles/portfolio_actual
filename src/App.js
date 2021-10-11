@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as BR, Route, Switch } from "react-router-dom";
+import { BrowserRouter as BR, Route, Switch, useHistory } from "react-router-dom";
 
 import "./assets/main.scss";
 import Home from "./components/home.js";
@@ -8,6 +8,8 @@ import Education from "./components/edu";
 import Exp from "./components/exp";
 import Abt from "./components/abt";
 function App() {
+
+  const history = useHistory()
   return (
     <div className="App">
       <BR>
