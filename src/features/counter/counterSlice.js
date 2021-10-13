@@ -5,7 +5,8 @@ export const counterSlice = createSlice({
     name: 'mouseTracker',
     initialState: {
         value: -1,
-        name: ""
+        name: "",
+        reloadValue: 0
     },
     reducers:{
         trackMouseDown: (state)=>{
@@ -36,10 +37,19 @@ export const counterSlice = createSlice({
         selectName: (state)=>{
             return state.name
         },
+        trackReloads: (state)=>{
+            state.reloadValue += 1
+        },
+        resetReloads: (state) =>{
+            state.reloadValue = 0
+        },
+        viewReloads: (state)=>{
+            return state.reloadValue
+        }
 
     }
 })
 
-export const {selectName, trackMouseDown, trackMouseUp, trackMouseReset, trackElementAbt, trackElementContact,trackElementExp,trackElementEdu, trackElementReset} = counterSlice.actions
+export const {viewReloads,trackReloads,resetReloads,selectName, trackMouseDown, trackMouseUp, trackMouseReset, trackElementAbt, trackElementContact,trackElementExp,trackElementEdu, trackElementReset} = counterSlice.actions
 
 export default counterSlice.reducer

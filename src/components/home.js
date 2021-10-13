@@ -19,7 +19,7 @@ import {Draggable, Droppable} from "@shopify/draggable"
 import { useSelector, useDispatch } from 'react-redux';
 
 import HomepageLinkItem from "./sub-comps/homepageLinkItem";
-import { selectName } from "../features/counter/counterSlice";
+import { selectName, resetReloads } from "../features/counter/counterSlice";
 const Home = () => {
 
  const [isInDrop, setIsInDrop] = React.useState(false)
@@ -27,7 +27,7 @@ const Home = () => {
  const [middleElementPStyle, setMiddleElementPStyle] = React.useState({})
  const [urlToPush, setUrlToPush] = React.useState("")
   const history = useHistory()
-  
+  const dispatch = useDispatch()
 
   
     
@@ -43,8 +43,9 @@ const Home = () => {
         history.push("/contact")
 
       }else if(urlToPush == "About"){
-        history.push('/abt')
+        history.push('/about')
       }
+      
     }
 
     const handleDragLeave = e =>{

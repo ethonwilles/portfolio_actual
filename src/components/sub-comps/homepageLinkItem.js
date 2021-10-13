@@ -55,7 +55,7 @@ const HomepageLinkItem = (props) =>{
       document.querySelector("." + props.name).style['opacity'] = 0
       e.dataTransfer.effectAllowed = 'copyMove'
       e.target.style.cursor = "pointer"
-      
+      e.target.dispatchEvent(new Event('click'))
     }
     const handleDragEnd = e =>{
         const itemWrapper = document.querySelector("." + props.name)

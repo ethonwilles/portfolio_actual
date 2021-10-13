@@ -3,6 +3,14 @@ import React, { Component, useEffect } from "react";
 import CompExp from "./exp-comp/comp-exp";
 import Projects from "./exp-comp/projects";
 import BackBar from "./backBar";
+
+
+
+//redux
+import { useSelector, useDispatch } from 'react-redux';
+import { viewReloads,trackReloads,trackElementReset,selectName, trackMouseDown, trackMouseUp, trackMouseReset, trackElementExp, trackElementEdu, trackElementContact, trackElementAbt } from '../features/counter/counterSlice';
+
+
 const Exp = () => {
   const inputRefZero = React.createRef()
   const inputRefOne = React.createRef()
@@ -18,8 +26,8 @@ const Exp = () => {
   const [secondInput, setSecondInput] = React.useState("")
   const [thirdInput, setThirdInput] = React.useState("")
   const [fourthInput, setFourthInput] = React.useState("")
-
-
+  // const reloadValue = useSelector(viewReloads).payload.counter.reloadValue
+  // const dispatch = useDispatch()
   
   
 
@@ -48,6 +56,7 @@ const Exp = () => {
 
   }, [])
 
+ 
 
   const checkAnswer = fifthValue =>{
     const fullWord = firstInput + secondInput + thirdInput + fourthInput + fifthValue
@@ -72,12 +81,15 @@ const Exp = () => {
     
   }
 
-  
+  const handleOnDrop = e =>{
+    window.location.reload()
+  }
 
 
 
   return (
     <div className="exp">
+      
       <BackBar />
       <div className="game">
         <p style={{fontSize: "20px", fontStyle: "italic"}}>Unscramble the word to view Experience</p>
@@ -85,23 +97,23 @@ const Exp = () => {
           <h1>{scrambledWord}</h1>
         </div>
         <div className="user-input-unscramble">
-          <input type="text" ref={inputRefZero} style={showExp ? {borderColor: "green", color: "green"} : showFailure ? {borderColor: "red", color: "red"}: null} onChange={e =>{
+          <input type="text" onDrop={handleOnDrop} ref={inputRefZero} style={showExp ? {borderColor: "green", color: "green"} : showFailure ? {borderColor: "red", color: "red"}: null} onChange={e =>{
             setFirstInput(e.target.value.toLowerCase().toString())
             inputRefOne.current.focus()
           }}/>
-          <input type="text" ref={inputRefOne} style={showExp ? {borderColor: "green", color: "green"} : showFailure ? {borderColor: "red", color: "red"}: null} onChange={e =>{
+          <input type="text" onDrop={handleOnDrop} ref={inputRefOne} style={showExp ? {borderColor: "green", color: "green"} : showFailure ? {borderColor: "red", color: "red"}: null} onChange={e =>{
             setSecondInput(e.target.value.toLowerCase().toString())
             inputRefTwo.current.focus()
           }}/>
-          <input type="text" ref={inputRefTwo} style={showExp ? {borderColor: "green", color: "green"} : showFailure ? {borderColor: "red", color: "red"}: null} onChange={e =>{
+          <input type="text" onDrop={handleOnDrop} ref={inputRefTwo} style={showExp ? {borderColor: "green", color: "green"} : showFailure ? {borderColor: "red", color: "red"}: null} onChange={e =>{
             setThirdInput(e.target.value.toLowerCase().toString())
             inputRefThree.current.focus()
           }}/>
-          <input type="text" ref={inputRefThree} style={showExp ? {borderColor: "green", color: "green"} : showFailure ? {borderColor: "red", color: "red"}: null} onChange={e =>{
+          <input type="text" onDrop={handleOnDrop} ref={inputRefThree} style={showExp ? {borderColor: "green", color: "green"} : showFailure ? {borderColor: "red", color: "red"}: null} onChange={e =>{
             setFourthInput(e.target.value.toLowerCase().toString())
             inputRefFour.current.focus()
           }}/>
-          <input type="text" ref={inputRefFour} style={showExp ? {borderColor: "green", color: "green"} : showFailure ? {borderColor: "red", color: "red"}: null} onChange={e =>{
+          <input type="text" onDrop={handleOnDrop} ref={inputRefFour} style={showExp ? {borderColor: "green", color: "green"} : showFailure ? {borderColor: "red", color: "red"}: null} onChange={e =>{
             
             checkAnswer(e.target.value.toLowerCase().toString())
           }}/>
