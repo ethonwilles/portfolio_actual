@@ -34,12 +34,6 @@ const Exp = () => {
   const scrambleWord = () =>{
     const list_scramble = word.split("")
     
-    // while (list_scramble.length > 0) {
-    //   let rannum = Math.floor(Math.random() * list_scramble.length + 1)
-    //   console.log(rannum)
-    //   listCompletedScramble.push(list_scramble[rannum])
-    //   list_scramble.splice(rannum, 1)
-    // }
     for (var i = list_scramble.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
       var temp = list_scramble[i];
@@ -48,7 +42,12 @@ const Exp = () => {
       
   }
   const completedList = list_scramble.join("")
-  setScrambledWord(completedList)
+  if(completedList == "space"){
+    scrambleWord()
+  }else{
+    setScrambledWord(completedList)
+  }
+  
   }
 
   React.useEffect(() =>{

@@ -1,38 +1,127 @@
-.main {
-  height: 100vh;
-  background-image: url("./images/background.jpg");
+// items needed to fix for different screen size
+// .boundaries .sprite .maze-item
 
+.edu{
+  
   display: flex;
   flex-direction: column;
+  
+  height: 100vh;
+
+  .edu-rules{
+    color: $site-lightred;
+    align-self: center;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 25px;
+  }
+
+  .boundary{
+    position:absolute;
+    height: 60vh;
+    width: 70px;
+    
+    margin-top: 85px;
+    margin-left: 385px;
+  }
+
+  .boundary-bottom{
+   
+    width: 63vw;
+    height: 70px;
+    position: absolute;
+    margin-top: 835px;
+    margin-left: 455px;
+  }
+
+  .boundary-top{
+    
+    width: 63vw;
+    height: 70px;
+    position: absolute;
+    margin-top: 17px;
+    margin-left: 455px;
+  }
+.game-wrapper{
+  
+  display: flex;
+  justify-content: center;
   align-items: center;
+  height: 60vh;
+  justify-self: center;
+  
+  .finish{
+    
+    height: 60vh;
+    width: 75px;
+    background-color: lightgreen;
+    border: 1.5px solid black;
+    border-left: none;
+    
+    
+  }
 }
 
-.edu-content {
-  background-color: white;
-  height: auto;
-  width: 50vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  border-radius: 20px;
+.maze-container{
+  
+  border: 1.5px solid black;
+  border-right: none;
+  height: 100%;
+  width: 60vw;
+  align-self: center;
+   
+   display: flex;
+  justify-content: space-around;
+  background-color: lightyellow;
+  .maze-item{
+    
+    width: 70px;
+    height: 300px;
+    background-color: black;
+    
+  }
 
-  .bottega-img {
-    padding: 20px 0px;
-  }
-  .bottega-desc {
+  .sprite{
+
+    
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    h2 {
-      text-align: center;
-    }
-    p {
-      font-style: italic;
-    }
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background-color: red;
+    margin-right: 1400px;
+    align-self: center;
+
+    
   }
-  i {
-    font-size: 55px;
-    padding: 10px 0px;
-  }
+
+  
+
+    @keyframes maze-item-anim{
+      0% {transform: translate(0,0);}
+      100% {transform: translate(0,28em);}
+    }
+
+    @keyframes center-item-anim{
+      0% {transform: translate(0,0);}
+      100% {transform: translate(0,-28em);}
+    }
+    .left-maze, .right-maze{
+      animation-name: maze-item-anim;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out;
+      
+    }
+   .center-maze{
+    align-self: flex-end;
+    animation-name: center-item-anim;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out;
+   }
+}
+
 }

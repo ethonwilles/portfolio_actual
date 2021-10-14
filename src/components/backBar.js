@@ -4,7 +4,7 @@ import backArrow from "../assets/homepage_icons/backarrow.svg"
 
 const BackBar = () =>{
 
-return <div>
+return <div className="backbar">
 <Link className="back-link-wrapper" to="/">
 <img src={backArrow} alt="backArrow"/>
 <h1>Back</h1>
