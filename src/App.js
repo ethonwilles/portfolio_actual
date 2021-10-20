@@ -9,7 +9,7 @@ import Exp from "./components/exp";
 import Abt from "./components/abt";
 function App() {
 
-  const history = useHistory()
+ 
   return (
     <div className="App">
       <BR>

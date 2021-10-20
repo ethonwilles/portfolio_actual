@@ -1,0 +1,90 @@
+.contact{
+display: flex;
+flex-direction: column;
+
+
+button{
+    width: 7vw;
+    height: 5vh;
+    align-self: center;
+    margin-top: 75px;
+    font-size: 40px;
+    background-color: white;
+    border: none;
+    
+    &:hover{
+        border: 1.5px solid black;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    &:active{
+        cursor: grabbing;
+        background-color: lightgreen;
+        font-size: 30px;
+        border: 1.5px solid black;
+        border-radius: 10px;
+    }
+    
+
+}
+
+.game-wrapper{
+align-self: center;
+width: auto;
+height: 50vh;
+
+
+.contact-game{
+    display: flex;
+    flex-direction: column;
+    
+    font-size: 20px;
+    width: 100%;
+    
+    .rules{
+        align-self: center;
+        
+        margin-top: 200px;
+
+        p, ul{
+            font-size: 30px;
+            font-style: italic;
+            color: $site-lightred;
+        }
+    }
+
+}
+
+.game-pieces-wrapper{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    
+    .gamePieceContainer{
+        .gamePiece{
+        
+            
+            border-radius: 100px;
+            width: 35px;
+            height: 35px;
+            margin: 6px;
+            padding: 4px;
+            border: 1.5px solid transparent;
+        }
+
+        .activePiece{
+            background-color: lightgreen;
+            cursor: pointer;
+            &:hover{
+                border: 1.5px solid black;
+            }
+        }
+    }
+    
+}
+
+}
+
+
+
+}

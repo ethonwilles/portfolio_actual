@@ -6,7 +6,8 @@ export const counterSlice = createSlice({
     initialState: {
         value: -1,
         name: "",
-        reloadValue: 0
+        reloadValue: 0,
+        remainingGamePieces: 37
     },
     reducers:{
         trackMouseDown: (state)=>{
@@ -45,11 +46,20 @@ export const counterSlice = createSlice({
         },
         viewReloads: (state)=>{
             return state.reloadValue
+        },
+        trackRemainingContactGamePieces: (state) =>{
+            state.remainingGamePieces = 37
+        },
+        viewRemainingContactGamePieces: (state)=>{
+            return state.remainingGamePieces
+        },
+        subtractRemainingContactPieces: (state) =>{
+            state.remainingGamePieces -= 1
         }
 
     }
 })
 
-export const {viewReloads,trackReloads,resetReloads,selectName, trackMouseDown, trackMouseUp, trackMouseReset, trackElementAbt, trackElementContact,trackElementExp,trackElementEdu, trackElementReset} = counterSlice.actions
+export const {subtractRemainingContactPieces,trackRemainingContactGamePieces,viewRemainingContactGamePieces,viewReloads,trackReloads,resetReloads,selectName, trackMouseDown, trackMouseUp, trackMouseReset, trackElementAbt, trackElementContact,trackElementExp,trackElementEdu, trackElementReset} = counterSlice.actions
 
 export default counterSlice.reducer

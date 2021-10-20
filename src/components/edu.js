@@ -31,6 +31,7 @@ const Education = () => {
       <div className="boundary" onMouseOver={spriteLeftBoundaries}></div>
       <div className="boundary-bottom" onMouseOver={spriteLeftBoundaries}></div>
       <div className="boundary-top" onMouseOver={spriteLeftBoundaries}></div>
+      <div className="boundary-right" onMouseOver={spriteLeftBoundaries}></div>
       <div className="game-wrapper" >
       <Maze gameWon={gameWon} spriteInUse={spriteInUse} handleSpriteInUse={handleSpriteInUse}/>
       <div className="finish" onMouseEnter={gameWon}></div>
