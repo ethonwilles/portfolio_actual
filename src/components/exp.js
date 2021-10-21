@@ -1,4 +1,5 @@
 import React, { Component, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 import CompExp from "./exp-comp/comp-exp";
 import Projects from "./exp-comp/projects";
@@ -9,6 +10,7 @@ import BackBar from "./backBar";
 //redux
 import { useSelector, useDispatch } from 'react-redux';
 import { viewReloads,trackReloads,trackElementReset,selectName, trackMouseDown, trackMouseUp, trackMouseReset, trackElementExp, trackElementEdu, trackElementContact, trackElementAbt } from '../features/counter/counterSlice';
+import Loader from "./anim-comps/loader";
 
 
 const Exp = () => {
@@ -26,8 +28,12 @@ const Exp = () => {
   const [secondInput, setSecondInput] = React.useState("")
   const [thirdInput, setThirdInput] = React.useState("")
   const [fourthInput, setFourthInput] = React.useState("")
+
+  const [loaderStyle, setLoaderStyle] = React.useState({"visibility" : "hidden"})
+
   // const reloadValue = useSelector(viewReloads).payload.counter.reloadValue
   // const dispatch = useDispatch()
+  const history = useHistory()
   
   
 
@@ -62,6 +68,12 @@ const Exp = () => {
     if(fullWord === word){
         setShowExp(true)
         setShowFailure(false)
+        setLoaderStyle({"visibility" : "visible", animation: 'fadeIn 2s linear, spin .7s ease-in-out infinite'})
+        setTimeout(() => {
+          setLoaderStyle({"visibility" : "hidden"})
+          history.push("/experience")
+        }, 2000);
+        
     }else{
       setShowFailure(true)
       changeValueNone()
@@ -118,10 +130,14 @@ const Exp = () => {
           }}/>
         </div>
         <div className="notification-wrapper">
-        {showFailure ? <p className="incorrect-wrapper" style={{color: "red", fontStyle: "italic", fontSize: "30px", margin: 0}} >Incorrect! Try again...</p> : showExp ? <p className="correct-wrapper" style={{color: "green", fontStyle: "italic", fontSize: "30px", margin: 0}}>Correct! Good Job!</p>: <span>&nbsp;</span>}
+        {showFailure ? <p className="incorrect-wrapper notification" style={{color: "red", fontStyle: "italic", fontSize: "30px", margin: 0, opacity: 0}} >Incorrect! Try again...</p> : showExp ? <p className="correct-wrapper notification" style={{color: "green", fontStyle: "italic", fontSize: "30px", margin: 0, animation: "fadeIn linear 2s"}}>Correct! Good Job!</p>: <span>&nbsp;</span>}
 
 
         </div>
+        
+        <Loader style={loaderStyle} />
+        
+        
       </div>
     </div>
   );

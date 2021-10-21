@@ -46,6 +46,7 @@ const HomepageLinkItem = (props) =>{
 
     const handleMouseDown = e =>{
         props.handleUrl(props.name)
+        
     }
 
 

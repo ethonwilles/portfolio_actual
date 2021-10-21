@@ -4,8 +4,10 @@
   flex-direction: column;
   p{
     align-self: center;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 600;
+    font-style: italic;
+    
   }
   .tic-tac-toe-wrapper{
     align-self: center;
@@ -15,12 +17,12 @@
     
     height: auto;
     width: 50vw;
-    margin-top: 50px;
+    
     .box{
       border: 3px solid black;
-      height: 310px;
+      height: 300px;
       width: 33%;
-
+      
       &:hover{
         
         cursor: pointer;
@@ -38,9 +40,14 @@
     .middle-row{
       
       border-top: 1.5px solid black;
-      border-bottom: 4.5px solid black;
+      border-bottom: 3px solid black;
     }
     
     
   }
+}
+
+@keyframes fadeIn {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }

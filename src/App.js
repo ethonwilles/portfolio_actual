@@ -7,6 +7,10 @@ import Contact from "./components/contact";
 import Education from "./components/edu";
 import Exp from "./components/exp";
 import Abt from "./components/abt";
+import ContactInfo from "./components/information-comps/contact-info";
+import EducationInfo from "./components/information-comps/education-info";
+import ExperienceInfo from "./components/information-comps/experience-info";
+import AboutInfo from "./components/information-comps/about-info";
 function App() {
 
  
@@ -19,6 +23,10 @@ function App() {
           <Route path="/edu" component={Education} />
           <Route path="/exp" component={Exp} />
           <Route path="/about" component={Abt} />
+          <Route path="/contact-me" component={ContactInfo}/>
+          <Route path="/education" component={EducationInfo}/>
+          <Route path="/experience" component={ExperienceInfo}/>
+          <Route path="/abt" component={AboutInfo}/>
         </Switch>
       </BR>
     </div>

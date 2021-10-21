@@ -4,6 +4,8 @@ import BackBar from "./backBar";
 import NavBar from "./navbar";
 import Matching from "./sub-contact-comps/matching";
 const Contact = () => {
+
+  
   return (
     <div className="contact">
      <BackBar />

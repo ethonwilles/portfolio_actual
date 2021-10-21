@@ -31,7 +31,11 @@ const TicTacToe = (props) =>{
  const checkGame = () =>{
      console.log(gameMatrix[0].join())
      if(gameMatrix[0].join() == "X,X,X"){
-         history.push("/abt")
+         
+        props.playerWon() 
+        setTimeout(()=>{
+             history.push("/abt")
+         },3000)
      }else if(gameMatrix[0].join() === "O,O,O"){
          props.botWon()
          setTrackClicks(0)
@@ -40,7 +44,11 @@ const TicTacToe = (props) =>{
                         ["","",""]
          ])
      }else if(gameMatrix[1].join() === "X,X,X"){
-         history.push("/abt")
+         
+        props.playerWon() 
+        setTimeout(()=>{
+             history.push("/abt")
+         },3000)
      }else if(gameMatrix[1].join() === "O,O,O"){
          props.botWon()
          setTrackClicks(0)
@@ -49,7 +57,11 @@ const TicTacToe = (props) =>{
                         ["","",""]
          ])
      }else if(gameMatrix[2].join() === "X,X,X"){
-         history.push("/abt")
+         
+        props.playerWon() 
+        setTimeout(()=>{
+             history.push("/abt")
+         },3000)
      }else if(gameMatrix[2].join() == "O,O,O"){
          props.botWon()
          setTrackClicks(0)
@@ -58,7 +70,11 @@ const TicTacToe = (props) =>{
                         ["","",""]
          ])
      }else if(`${gameMatrix[0][0]}${gameMatrix[1][0]}${gameMatrix[2][0]}` == "XXX"){
-        history.push("/abt")
+        
+        props.playerWon()
+        setTimeout(()=>{
+            history.push("/abt")
+        },3000)
      }else if(`${gameMatrix[0][0]}${gameMatrix[1][0]}${gameMatrix[2][0]}` == "OOO"){
          props.botWon()
          setTrackClicks(0)
@@ -67,7 +83,11 @@ const TicTacToe = (props) =>{
                         ["","",""]
          ])
     }else if(`${gameMatrix[0][1]}${gameMatrix[1][1]}${gameMatrix[2][1]}` == "XXX"){
-         history.push("/abt")
+         
+        props.playerWon() 
+        setTimeout(()=>{
+             history.push("/abt")
+         },3000)
     }else if(`${gameMatrix[0][1]}${gameMatrix[1][1]}${gameMatrix[2][1]}` == "OOO"){
          props.botWon()
          setTrackClicks(0)
@@ -76,7 +96,11 @@ const TicTacToe = (props) =>{
                         ["","",""]
          ])
     }else if(`${gameMatrix[0][2]}${gameMatrix[1][2]}${gameMatrix[2][2]}` == "XXX"){
-         history.push("/abt")
+         
+        props.playerWon() 
+        setTimeout(()=>{
+             history.push("/abt")
+         },3000)
     }else if(`${gameMatrix[0][2]}${gameMatrix[1][2]}${gameMatrix[2][2]}` == "OOO"){
          props.botWon()
          setTrackClicks(0)
@@ -85,7 +109,11 @@ const TicTacToe = (props) =>{
                         ["","",""]
          ])
     }else if(`${gameMatrix[0][0]}${gameMatrix[1][1]}${gameMatrix[2][2]}` == "XXX"){
-         history.push("/abt")
+        props.playerWon()
+        setTimeout(() => {
+            history.push("/abt")
+        }, 3000);
+         
     }else if(`${gameMatrix[0][0]}${gameMatrix[1][1]}${gameMatrix[2][2]}` == "OOO"){
          props.botWon()
          setTrackClicks(0)
@@ -94,7 +122,11 @@ const TicTacToe = (props) =>{
                         ["","",""]
          ])
     }else if(`${gameMatrix[0][2]}${gameMatrix[1][1]}${gameMatrix[2][0]}` == "XXX"){
-         history.push("/abt")
+         
+        props.playerWon() 
+        setTimeout(()=>{
+             history.push("/abt")
+         },3000)
     }else if(`${gameMatrix[0][2]}${gameMatrix[1][1]}${gameMatrix[2][0]}` == "OOO"){
          props.botWon()
          setTrackClicks(0)

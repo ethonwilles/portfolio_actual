@@ -20,11 +20,13 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import HomepageLinkItem from "./sub-comps/homepageLinkItem";
 import { selectName, resetReloads } from "../features/counter/counterSlice";
+import HomepageLoaderItems from "./sub-comps/homepageLoaderItem";
 const Home = () => {
 
  const [isInDrop, setIsInDrop] = React.useState(false)
  const [middleElementStyle, setMiddleElementStyle] = React.useState({})
  const [middleElementPStyle, setMiddleElementPStyle] = React.useState({})
+ const [animImageSource, setAnimImageSource] = React.useState()
  const [urlToPush, setUrlToPush] = React.useState("")
   const history = useHistory()
   const dispatch = useDispatch()
@@ -34,6 +36,7 @@ const Home = () => {
     
     const handleDragEnter = e =>{
       e.target.classList.add("over")
+      
       setMiddleElementPStyle({'color' : 'green'})
       if(urlToPush == "Experience"){
         history.push("/exp")
@@ -56,7 +59,18 @@ const Home = () => {
 
     const handleMouseDown = url =>{
       setUrlToPush(url)
+      if(urlToPush == "Experience"){
+        setAnimImageSource(exp)
+      }else if(urlToPush == "Education"){
+        setAnimImageSource(edu)
+      }else if(urlToPush == "Contact"){
+        
+        setAnimImageSource(cntct)
+      }else if(urlToPush == "About"){
+        setAnimImageSource(abt)
+      
     }
+  }
 
   return (
     <div className="home" style={{height: "100vh"}}>
@@ -95,7 +109,13 @@ const Home = () => {
 
 
       
-      
+      {/* <div className="transition">
+        <HomepageLoaderItems source={animImageSource}/>
+        <HomepageLoaderItems source={animImageSource}/>
+        <HomepageLoaderItems source={animImageSource}/>
+        <HomepageLoaderItems source={animImageSource}/>
+        <HomepageLoaderItems source={animImageSource}/>
+      </div> */}
     </div>
   );
 };
