@@ -3,19 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "axios": "^0.21.1",
-    "node-sass": "^4.14.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-router-dom": "^5.1.2",
-=======
-    "axios": "^0.19.2",
+    "@shopify/draggable": "^1.0.0-beta.8",
+    "axios": "^0.22.0",
     "node-sass": "^4.14.1",
     "react": "^16.14.0",
+    "react-dnd": "^14.0.4",
+    "react-dnd-html5-backend": "^14.0.2",
     "react-dom": "^16.14.0",
-    "react-router-dom": "^5.2.0",
->>>>>>> 10d0761169ecd49e0b94e2be9c4e2df9dd2c0adf
+    "react-draggable": "^4.4.4",
+    "react-dropzone": "^11.4.2",
+    "react-router-dom": "^5.3.0",
     "react-scripts": "3.2.0",
     "sass-loader": "^8.0.2"
   },

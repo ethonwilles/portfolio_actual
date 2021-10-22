@@ -34,6 +34,21 @@ body {
   
 }
 
+.img-wrapper{
+  position: absolute;
+  
+  .center-img{
+    position: absolute;
+    border: none;
+    background-color: white;
+    
+  }
+  .active{
+    
+    
+  }
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   
@@ -43,5 +58,15 @@ body {
 @keyframes fadeIn {
   0%{opacity: 0; visibility: visible;}
   100%{opacity: 1; visibility: visible;}
+}
+
+@keyframes scale {
+  0%{transform: scale(inherit,inherit)}
+  100%{transform: scale(250, 250);}
+}
+
+@keyframes scaleReverse {
+  0%{transform: scale(250,250);}
+  100%{transform: scale(0,0);}
 }
 

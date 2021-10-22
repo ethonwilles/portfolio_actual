@@ -7,9 +7,7 @@ import BackBar from "./backBar";
 
 
 
-//redux
-import { useSelector, useDispatch } from 'react-redux';
-import { viewReloads,trackReloads,trackElementReset,selectName, trackMouseDown, trackMouseUp, trackMouseReset, trackElementExp, trackElementEdu, trackElementContact, trackElementAbt } from '../features/counter/counterSlice';
+
 import Loader from "./anim-comps/loader";
 
 

@@ -15,23 +15,34 @@ import {Draggable, Droppable} from "@shopify/draggable"
 
 
 
-//redux
-import { useSelector, useDispatch } from 'react-redux';
+
 
 import HomepageLinkItem from "./sub-comps/homepageLinkItem";
-import { selectName, resetReloads } from "../features/counter/counterSlice";
+
 import HomepageLoaderItems from "./sub-comps/homepageLoaderItem";
 const Home = () => {
-
+ const [eduReloads, setEduReloads] = React.useState(0)
  const [isInDrop, setIsInDrop] = React.useState(false)
  const [middleElementStyle, setMiddleElementStyle] = React.useState({})
  const [middleElementPStyle, setMiddleElementPStyle] = React.useState({})
  const [animImageSource, setAnimImageSource] = React.useState()
  const [urlToPush, setUrlToPush] = React.useState("")
-  const history = useHistory()
-  const dispatch = useDispatch()
 
-  
+ const [centerImgStyle, setCenterImgStyle] = React.useState({"visibility" : "hidden"})
+
+  const history = useHistory()
+
+
+    React.useEffect(() =>{
+      console.log(eduReloads)
+      setEduReloads(0)
+    },[])
+    
+    const countEduReloads = () =>{
+      const reloads = eduReloads + 1
+      setEduReloads(reloads)
+
+    }
     
     
     const handleDragEnter = e =>{
@@ -39,14 +50,40 @@ const Home = () => {
       
       setMiddleElementPStyle({'color' : 'green'})
       if(urlToPush == "Experience"){
+        document.querySelector(".exp-img").style.visibility = "visible"
+        document.querySelector(".exp-img").style.animation = "scale 4.5s"
+        setTimeout(()=>{ 
+           
         history.push("/exp")
+        }, 750)
+
+        
       }else if(urlToPush == "Education"){
+        
+        document.querySelector(".edu-img").style.visibility = "visible"
+        document.querySelector(".edu-img").style.animation = "scale 4.5s"
+        setTimeout(()=>{ 
+          
         history.push("/edu")
+        }, 750)
+       
       }else if(urlToPush == "Contact"){
+        document.querySelector(".cntct-img").style.visibility = "visible"
+        document.querySelector(".cntct-img").style.animation = "scale 4.5s"
+        setTimeout(()=>{ 
+           
         history.push("/contact")
+        }, 750)
+        
 
       }else if(urlToPush == "About"){
-        history.push('/about')
+        document.querySelector(".abt-img").style.visibility = "visible"
+        document.querySelector(".abt-img").style.animation = "scale 4.5s"
+        setTimeout(()=>{ 
+           
+        history.push("/about")
+        }, 750)
+        
       }
       
     }
@@ -87,12 +124,19 @@ const Home = () => {
         <HomepageLinkItem name="Experience" handleUrl={handleMouseDown} imgSrc={exp} optionalClassName={"item-wrapper Experience"} isInDrop={isInDrop}/>
         
 
-        <HomepageLinkItem name="Education" handleUrl={handleMouseDown} imgSrc={edu} optionalClassName={"item-wrapper Education"} isInDrop={isInDrop}/>
+        <HomepageLinkItem name="Education" countReloads={countEduReloads} viewReloads={eduReloads} handleUrl={handleMouseDown} imgSrc={edu} optionalClassName={"item-wrapper Education"} isInDrop={isInDrop}/>
         </div>
         
       
         
       <div className="trunk-comp-middle two" onDragEnter={handleDragEnter} onDrop onDragLeave={handleDragLeave}>
+        <div className="img-wrapper">
+          <img className="exp-img center-img" src={exp} style={centerImgStyle}/>
+          <img className="edu-img center-img" src={edu} style={centerImgStyle}></img>
+          <img className="abt-img center-img" src={abt} style={centerImgStyle}/>
+          <img className="cntct-img center-img" src={cntct} style={centerImgStyle}/>
+          
+        </div>
       <img src={dragNDrop} alt="dropzone" style={middleElementStyle}  />
       <p style={middleElementPStyle}>Drag Icon to box to Begin</p>
       </div>

@@ -1,13 +1,11 @@
 import React from 'react';
 import {Draggable} from "@shopify/draggable"
-import { Droppable } from 'react-beautiful-dnd';
+
 import { useHistory } from 'react-router-dom';
 // svg icon imports
 
 
-//redux
-import { useSelector, useDispatch } from 'react-redux';
-import { trackElementReset,selectName, trackMouseDown, trackMouseUp, trackMouseReset, trackElementExp, trackElementEdu, trackElementContact, trackElementAbt } from '../../features/counter/counterSlice';
+
 
 
 
@@ -15,19 +13,10 @@ import { trackElementReset,selectName, trackMouseDown, trackMouseUp, trackMouseR
 const HomepageLinkItem = (props) =>{
    
     const history = useHistory()
-    const elementName = useSelector(selectName).payload.counter.name
-    const dispatch = useDispatch()
+    
     
 
-    window.addEventListener('mouseup', e=>{
-        if(elementName == ""){
-            dispatch(trackMouseReset())
-        }else{
-            dispatch(trackMouseUp())
-            dispatch(trackElementReset())
-        }
-    }
-    )
+    
 
     const mouseDown = e =>{
         // dispatch(trackMouseDown())

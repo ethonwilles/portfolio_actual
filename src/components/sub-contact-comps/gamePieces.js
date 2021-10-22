@@ -1,11 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-//redux
 
-import { useSelector, useDispatch } from 'react-redux';
-
-import {subtractRemainingContactPieces, trackRemainingContactGamePieces, viewRemainingContactGamePieces } from '../../features/counter/counterSlice';
 
 
 const GamePieces = (props) =>{

@@ -87,9 +87,20 @@
        flex-direction: column;
        align-items: center;
        justify-content: center;
-      
+       
       font-style: italic;
       margin: 15px;
+
+      .img-wrapper{
+        margin-right: 215px;
+  margin-bottom: 275px;
+  .center-img{
+    border:none;
+  }
+      }
+      
+
+
        img{
          height: 180px;
          width: inherit;
@@ -114,3 +125,7 @@
      }
    }
 }
+
+
+
+
